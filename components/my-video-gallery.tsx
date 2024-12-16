@@ -42,7 +42,7 @@ const videos = [
   },
 ];
 
-export default function MyVideoGallery({className}) {
+export default function MyVideoGallery() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -73,7 +73,7 @@ export default function MyVideoGallery({className}) {
 
   return (
     <>
-      <div className={`grid grid-cols-2 lg:grid-cols-3 gap-2 ${className}`}>
+      <div className={`grid grid-cols-2 lg:grid-cols-3 gap-2 xl:grid-cols-4`}>
         {videos.map((item, index) => (
           <div
             key={index}

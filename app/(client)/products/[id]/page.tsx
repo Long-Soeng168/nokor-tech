@@ -72,7 +72,7 @@ const ProductDetailPage = () => {
         </div>
         <div className='mt-4 p-4 border-t'>
           <p className="text-xl font-semibold text-gray-700 mb-2">Videos:</p>
-          <MyVideoGallery className='xl:grid-cols-4' />
+          <MyVideoGallery />
         </div>
 
         <div className='px-2'>
