@@ -2,14 +2,13 @@
 import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import animationData from "@/public/images/animations/success.json";
 import LottieAnimation from "@/components/ui/lottie-animation";
 
 const PageSuccess = async () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-8 bg-gray-50">
 
-      <LottieAnimation animationData={animationData} />
+      <LottieAnimation />
       <h1 className="mt-4 text-3xl font-semibold text-gray-800">
         Thanks For Order!
       </h1>

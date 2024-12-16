@@ -52,7 +52,7 @@ export default function MyVideoGallery() {
     }
   }, [currentIndex, isOpen]);
 
-  const getVideoUrl = (src) => {
+  const getVideoUrl = (src: string) => {
     // Check if the src is an iframe HTML string
     const iframeRegex = /<iframe.*?src="(.*?)"/;
     const match = src.match(iframeRegex);
