@@ -2,7 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import animationData from "/public/images/animations/success-animation.json";
+import animationData from "@/public/images/animations/success.json";
 import LottieAnimation from "@/components/ui/lottie-animation";
 
 const PageSuccess = async () => {
