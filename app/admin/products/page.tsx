@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation"; // For navigation
 import { baseUrl } from "../utils/url";
 import MyProductTable from "@/components/my-products-table";
+import { Button } from "@/components/ui/button";
 
 type Product = {
     id: number;
@@ -64,6 +65,7 @@ export default function Products() {
             <h1 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-6">
                 Product List
             </h1>
+            <Button onClick={() => router.push('/admin/products/create')}>New</Button>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {products.map((product) => (
                     <div

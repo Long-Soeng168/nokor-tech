@@ -73,14 +73,14 @@ const page = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-100">
-            <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-lg">
-                <h2 className="text-2xl font-bold mb-6 text-gray-700">Submit Product</h2>
+        <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-800">
+            <div className="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md w-full max-w-lg">
+                <h2 className="text-2xl font-bold mb-6 text-gray-700 dark:text-white">Submit Product</h2>
 
                 <form onSubmit={handleSubmit} className="space-y-4">
                     {/* Product Name */}
                     <div>
-                        <label className="block text-sm font-medium text-gray-600">
+                        <label className="block text-sm font-medium text-gray-600 dark:text-gray-300">
                             Product Name
                         </label>
                         <input
@@ -89,13 +89,13 @@ const page = () => {
                             value={formData.name}
                             onChange={handleInputChange}
                             required
-                            className="w-full mt-1 px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                            className="w-full mt-1 px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none dark:bg-gray-800 dark:border-gray-600 dark:text-white"
                         />
                     </div>
 
                     {/* Description */}
                     <div>
-                        <label className="block text-sm font-medium text-gray-600">
+                        <label className="block text-sm font-medium text-gray-600 dark:text-gray-300">
                             Description
                         </label>
                         <textarea
@@ -104,13 +104,13 @@ const page = () => {
                             onChange={handleInputChange}
                             rows={4}
                             required
-                            className="w-full mt-1 px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                            className="w-full mt-1 px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none dark:bg-gray-800 dark:border-gray-600 dark:text-white"
                         />
                     </div>
 
                     {/* Price */}
                     <div>
-                        <label className="block text-sm font-medium text-gray-600">
+                        <label className="block text-sm font-medium text-gray-600 dark:text-gray-300">
                             Price ($)
                         </label>
                         <input
@@ -119,20 +119,20 @@ const page = () => {
                             value={formData.price}
                             onChange={handleInputChange}
                             required
-                            className="w-full mt-1 px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                            className="w-full mt-1 px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none dark:bg-gray-800 dark:border-gray-600 dark:text-white"
                         />
                     </div>
 
                     {/* Image */}
                     <div>
-                        <label className="block text-sm font-medium text-gray-600">
+                        <label className="block text-sm font-medium text-gray-600 dark:text-gray-300">
                             Product Image
                         </label>
                         <input
                             type="file"
                             onChange={handleImageChange}
                             required
-                            className="w-full mt-1 text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border file:border-gray-300 file:text-gray-600 file:bg-gray-50 hover:file:bg-gray-100"
+                            className="w-full mt-1 text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border file:border-gray-300 file:text-gray-600 file:bg-gray-50 hover:file:bg-gray-100 dark:file:bg-gray-700 dark:file:text-gray-300 dark:file:hover:bg-gray-600"
                         />
                     </div>
 
@@ -142,7 +142,7 @@ const page = () => {
                             type="submit"
                             disabled={loading}
                             className={`w-full ${loading ? "bg-gray-400" : "bg-blue-500 hover:bg-blue-600"
-                                } text-white py-2 px-4 rounded-md font-medium focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                                } text-white py-2 px-4 rounded-md font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-blue-600 dark:hover:bg-blue-700`}
                         >
                             {loading ? "Submitting..." : "Submit Product"}
                         </button>
@@ -150,6 +150,7 @@ const page = () => {
                 </form>
             </div>
         </div>
+
     );
 };
 
