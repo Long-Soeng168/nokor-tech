@@ -74,56 +74,55 @@ export default function EditProductPage() {
     if (loading) return <div>Loading...</div>;
 
     return (
-        <div className="p-6">
-            <h1 className="text-2xl font-bold mb-4">Edit Product</h1>
-            <form onSubmit={handleSubmit} className="space-y-4">
-                {/* Name Input */}
-                <div>
-                    <label className="block font-semibold">Product Name</label>
-                    <input
-                        type="text"
-                        name="name"
-                        value={product.name}
-                        onChange={handleChange}
-                        className="w-full border p-2 rounded"
-                        required
-                    />
-                </div>
+        <div className="min-h-screen flex items-center justify-center bg-gray-100">
+            <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-lg">
+                <h1 className="text-2xl font-bold mb-6 text-gray-700">Edit Product</h1>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                    {/* Name Input */}
+                    <div>
+                        <label className="block font-semibold">Product Name</label>
+                        <input
+                            type="text"
+                            name="name"
+                            value={product.name}
+                            onChange={handleChange}
+                            className="w-full border p-2 rounded"
+                            required
+                        />
+                    </div>
+                    {/* Description Input */}
+                    <div>
+                        <label className="block font-semibold">Description</label>
+                        <textarea
+                            name="description"
+                            value={product.description}
+                            onChange={handleChange}
+                            className="w-full border p-2 rounded"
+                            rows={4}
+                        ></textarea>
+                    </div>
+                    {/* Price Input */}
+                    <div>
+                        <label className="block font-semibold">Price</label>
+                        <input
+                            type="number"
+                            name="price"
+                            value={product?.price || ""}
+                            onChange={handleChange}
+                            className="w-full border p-2 rounded"
+                            required
+                        />
+                    </div>
+                    {/* Submit Button */}
+                    <button
+                        type="submit"
+                        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+                    >
+                        Save Changes
+                    </button>
+                </form>
+            </div>
 
-                {/* Description Input */}
-                <div>
-                    <label className="block font-semibold">Description</label>
-                    <textarea
-                        name="description"
-                        value={product.description}
-                        onChange={handleChange}
-                        className="w-full border p-2 rounded"
-                        rows={4}
-                    ></textarea>
-                </div>
-
-                {/* Price Input */}
-                <div>
-                    <label className="block font-semibold">Price</label>
-                    <input
-                        type="number"
-                        name="price"
-                        value={product?.price || ""}
-                        onChange={handleChange}
-                        className="w-full border p-2 rounded"
-                        required
-                    />
-                </div>
-
-                {/* Submit Button */}
-                <button
-                    type="submit"
-                    className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-                >
-                    Save Changes
-                </button>
-            </form>
-            
         </div>
     );
 }

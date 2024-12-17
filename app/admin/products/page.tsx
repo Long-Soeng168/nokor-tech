@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation"; // For navigation
 import { baseUrl } from "../utils/url";
+import MyProductTable from "@/components/my-products-table";
+import { Button } from "@/components/ui/button";
 
 type Product = {
     id: number;
@@ -55,30 +57,36 @@ export default function Products() {
     };
 
     return (
-        <div className="max-w-screen-xl mx-auto px-4 py-8">
-            <h1 className="text-3xl font-bold text-center text-gray-900 mb-6">
+        <div className="px-4 py-8">
+            <h1 className="text-3xl font-bold text-start text-gray-900 dark:text-white mb-6">
                 Product List
             </h1>
+            <MyProductTable/>
+            <h1 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-6">
+                Product List
+            </h1>
+            <Button onClick={() => router.push('/admin/products/create')}>New</Button>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {products.map((product) => (
                     <div
                         key={product.id}
                         onClick={() => handleProductClick(product.id)} // Click event for navigation
-                        className="product-card bg-white shadow-lg rounded-lg overflow-hidden p-4 flex flex-col cursor-pointer hover:shadow-xl transition duration-300"
+                        className="product-card bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden p-4 flex flex-col cursor-pointer hover:shadow-xl transition duration-300"
                     >
                         <img
                             src={product.image}
                             alt={product.name}
                             className="w-full h-48 object-cover rounded-lg mb-4"
                         />
-                        <h2 className="text-xl font-semibold text-gray-800 mb-2">
+                        <h2 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">
                             {product.name}
                         </h2>
-                        <p className="text-sm text-gray-600 mb-2">{product.description}</p>
-                        <p className="text-lg font-bold text-gray-900">${product.price}</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">{product.description}</p>
+                        <p className="text-lg font-bold text-gray-900 dark:text-gray-100">${product.price}</p>
                     </div>
                 ))}
             </div>
         </div>
+
     );
 }
