@@ -12,6 +12,7 @@ const page = () => {
                 <div className="aspect-video rounded-xl bg-muted/50" ><MyBarChartMultipleComponent /></div>
                 <div className="aspect-video rounded-xl bg-muted/50" ><MyPieChartComponent /></div>
             </div>
+            <hr className='my-2' />
             <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min" >
                 <MyLineChartInteractiveComponent />
             </div>
