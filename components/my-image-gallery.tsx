@@ -7,6 +7,7 @@ import "yet-another-react-lightbox/plugins/thumbnails.css"; // Thumbnail plugin 
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
 import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
+import Image from "next/image";
 
 const photos = [
   "/images/banners/banner3.png",
@@ -23,7 +24,9 @@ const MyImageGallery = () => {
     <div>
       {/* Large image at the top */}
       <div className="w-full mb-2">
-        <img
+        <Image
+          width={400}
+          height={400}
           src={photos[0]}
           alt="Large Image"
           className="w-full aspect-square object-cover rounded-lg"
@@ -37,7 +40,9 @@ const MyImageGallery = () => {
       {/* Thumbnails for the rest of the images */}
       <div className="grid grid-cols-4 gap-2">
         {photos.slice(1).map((photo, index) => (
-          <img
+          <Image
+            width={400}
+            height={400}
             key={index}
             src={photo}
             alt={`Image ${index + 2}`} // Adjusted index for thumbnails

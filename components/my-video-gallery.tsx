@@ -10,12 +10,13 @@ import {
   DialogTrigger,
 } from "./ui/dialog";
 import { Button } from "./ui/button";
+import Image from "next/image";
 
 const videos = [
   // Url MP4
   {
     id: 1,
-    src: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+    src: "https://www.youtube.com/embed/J0NuOlA2xDc?si=IiGdSgybkKc3-Uem",
     title: "Video 1",
     thumb: "/images/banners/banner1.png",
   },
@@ -36,7 +37,7 @@ const videos = [
   // Locale
   {
     id: 3,
-    src: "/videos/BigBuckBunny.mp4",
+    src: "https://www.youtube.com/embed/J0NuOlA2xDc?si=IiGdSgybkKc3-Uem",
     title: "Video 3",
     thumb: "/images/banners/banner3.png",
   },
@@ -84,7 +85,9 @@ export default function MyVideoGallery() {
             }}
           >
             <div className="w-full relative aspect-w-16 aspect-h-9 bg-black rounded-xl overflow-hidden">
-              <img
+              <Image
+                width={400}
+                height={400}
                 src={item.thumb} // Replace with dynamic thumbnail if available
                 alt={item.title}
                 className="w-full aspect-video object-cover transition-all duration-300 transform group-hover:scale-105"
